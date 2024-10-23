@@ -121,6 +121,8 @@ esac
 # 2. Get the objects per os in $TARG.
 
 case "${targ}" in
+*-*-dragonfly*)
+	os_obs="dfly-tdep.o solib-svr4.o";;
 *-*-freebsd* | *-*-kfreebsd*-gnu)
 	os_obs="fbsd-tdep.o solib-svr4.o";;
 *-*-netbsd* | *-*-knetbsd*-gnu)
@@ -720,6 +722,11 @@ x86_64-*-linux*)
 			i386-linux-tdep.o glibc-tdep.o \
 			solib-svr4.o symfile-mem.o linux-tdep.o linux-record.o"
 	;;
+x86_64-*-dragonfly*)
+	# Target: DragonFly/amd64
+	gdb_target_obs="amd64-dfly-tdep.o ${i386_tobjs} \
+			i386-bsd-tdep.o i386-dfly-tdep.o"
+	;;
 x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
 	# Target: FreeBSD/amd64
 	gdb_target_obs="amd64-fbsd-tdep.o ${i386_tobjs} \
@@ -799,6 +806,8 @@ fi
 # map target onto default OS ABI
 
 case "${targ}" in
+*-*-dragonfly*)
+		gdb_osabi=GDB_OSABI_DRAGONFLY ;;
 *-*-freebsd* | *-*-kfreebsd*-gnu)
 		gdb_osabi=GDB_OSABI_FREEBSD ;;
 *-*-linux* | *-*-uclinux*)

@@ -736,6 +736,7 @@ ALL_64_TARGET_OBS = \
 	alpha-tdep.o \
 	amd64-darwin-tdep.o \
 	amd64-dicos-tdep.o \
+	amd64-dfly-tdep.o \
 	amd64-fbsd-tdep.o \
 	amd64-linux-tdep.o \
 	amd64-netbsd-tdep.o \
@@ -809,6 +810,7 @@ ALL_TARGET_OBS = \
 	csky-linux-tdep.o \
 	csky-tdep.o \
 	dicos-tdep.o \
+	dfly-tdep.o \
 	fbsd-tdep.o \
 	frv-linux-tdep.o \
 	frv-tdep.o \
@@ -823,6 +825,7 @@ ALL_TARGET_OBS = \
 	i386-bsd-tdep.o \
 	i386-darwin-tdep.o \
 	i386-dicos-tdep.o \
+	i386-dfly-tdep.o \
 	i386-fbsd-tdep.o \
 	i386-gnu-tdep.o \
 	i386-go32-tdep.o \
@@ -1366,6 +1369,8 @@ HFILES_NO_SRCDIR = \
 	extract-store-integer.h \
 	f-array-walker.h \
 	f-lang.h \
+	dfly-nat.h \
+	dfly-tdep.h \
 	fbsd-nat.h \
 	fbsd-tdep.h \
 	filesystem.h \
